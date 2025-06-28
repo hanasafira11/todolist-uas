@@ -1,0 +1,140 @@
+/* ... (CSS sebelumnya) ... */
+
+/* Bottom Section - holds form and mobile preview */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align to top */
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Add Task Form Container */
+.add-task-form-container {
+    background-color: #fff; /* Warna putih agar kontras */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    flex: 1; /* Mengambil ruang yang tersedia */
+    max-width: 500px; /* Batasan lebar form */
+}
+
+.add-task-form-container h1 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8em;
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 15px;
+}
+
+.add-task-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-task-form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--light-text);
+}
+
+.add-task-form-container input[type="text"],
+.add-task-form-container input[type="date"],
+.add-task-form-container select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    background-color: #fff;
+    color: var(--text-color);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.add-task-form-container input::placeholder,
+.add-task-form-container select option {
+    color: #a0a0a0;
+}
+
+.add-task-form-container input:focus,
+.add-task-form-container select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.add-task-form-container button {
+    padding: 12px 20px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.add-task-form-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Task Card Actions (Icons) */
+.task-card .task-actions,
+.task-card-mobile .task-actions { /* Tambahkan untuk mobile jika perlu */
+    display: flex;
+    justify-content: flex-end; /* Posisikan ke kanan */
+    gap: 10px;
+    margin-top: 10px; /* Spasi dari konten atas */
+    border-top: 1px solid var(--progress-bar-bg); /* Garis pemisah */
+    padding-top: 10px;
+}
+
+.task-card .action-done,
+.task-card .action-delete {
+    color: var(--light-text);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.task-card .action-done:hover {
+    color: var(--progress-green); /* Hijau untuk done */
+}
+
+.task-card .action-delete:hover {
+    color: var(--status-blocked-text); /* Merah untuk delete */
+}
+
+/* No tasks in column placeholder */
+.no-tasks-in-column {
+    text-align: center;
+    color: var(--light-text);
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for bottom section */
+@media (max-width: 1024px) {
+    .bottom-section {
+        flex-direction: column; /* Stack form and mobile preview vertically */
+        align-items: center;
+        gap: 30px;
+    }
+    .add-task-form-container {
+        max-width: 100%; /* Take full width */
+    }
+}
+@media (max-width: 768px) {
+    .add-task-form-container {
+        padding: 20px; /* Smaller padding on small screens */
+    }
+}
